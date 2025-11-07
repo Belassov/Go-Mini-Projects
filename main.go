@@ -23,7 +23,6 @@ func main() {
 		}
 		fmt.Printf("ID: %d | %s | %s\n", t.ID, t.Title, status)
 	}
-
 	store.AddProduct("Apple", 100)
 	store.AddProduct("Bread", 50)
 	store.AddProduct("Meat", 1000)
