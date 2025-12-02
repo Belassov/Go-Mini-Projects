@@ -48,3 +48,44 @@ func Describe(s Shape) {
 	}
 
 }
+
+type Bank interface {
+	Deposit()
+	Withdraw()
+	Balance()
+}
+
+type DebitAcc struct {
+	CurrentBalance uint
+}
+type CreditAcc struct {
+	CurrentBalance int
+}
+
+func (d *DebitAcc) Deposit(sum uint) uint {
+	d.CurrentBalance += sum
+	return d.CurrentBalance
+}
+
+func (d *DebitAcc) Withdraw(sum uint) uint {
+	d.CurrentBalance -= sum
+	return d.CurrentBalance
+}
+
+func (d *DebitAcc) Balance() uint {
+	return d.CurrentBalance
+}
+
+func (c *CreditAcc) Deposit(sum int) int {
+	c.CurrentBalance += sum
+	return c.CurrentBalance
+}
+
+func (c *CreditAcc) Withdraw(sum int) int {
+	c.CurrentBalance -= sum
+	return c.CurrentBalance
+}
+
+func (c *CreditAcc) Balance(sum int) int {
+	return c.CurrentBalance
+}

@@ -29,7 +29,7 @@ func (s *Store) FindByName(name string) (*Product, error) {
 
 func (s *Store) TotalPrice() int {
 	var total int
-	for _, p := range s.Products { // Это мне тоже написал ГПТ
+	for _, p := range s.Products {
 		total += p.Price
 	}
 	return total

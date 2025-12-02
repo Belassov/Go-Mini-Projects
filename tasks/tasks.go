@@ -24,7 +24,7 @@ func (tm *TaskManager) AddTask(title string) {
 
 func (tm *TaskManager) Done(id int) error {
 	for i := range tm.tasks {
-		if tm.tasks[i].ID == id { // Это мне написал ГПТ, но смысл как это  работает я понял
+		if tm.tasks[i].ID == id {
 			tm.tasks[i].Status = true
 			return nil
 		}
